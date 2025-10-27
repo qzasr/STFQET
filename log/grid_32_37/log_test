@@ -1,0 +1,102 @@
+time_slot=15, torch_seed=46, num_link=134, num_his=8, num_pred=8, L=2, K=8, d=8, train_ratio=0.7, val_ratio=0.1, test_ratio=0.2, batch_size=8, max_epoch=100, patience=8, learning_rate=0.003, decay_epoch=10, traffic_file='./data/Traffic_speed_(32, 37).csv', query_file='./data/query_beijing_0201_grid_start_destination_count.npz', SE_file='./data/Gf_grid_32_37_id.txt', adj_file='./data/edge_list_grid_(32,37)_weight.txt', row=32, col=37, model_file='./save_model/grid_32_37/Model_GF_test_20251019_155314.pth', log_file='./log/grid_32_37/log_test', STE_SE_FC_bn_decay=0.1, STE_SE_FC_drop=0.01, STE_SE_FC_act1='relu', STE_SE_FC_act2='none', STE_TE_FC_bn_decay=0.1, STE_TE_FC_drop=0.01, STE_TE_FC_act1='relu', STE_TE_FC_act2='none', FFT_FC_bn_decay=0.1, FFT_FC_drop=0.01, FFT_FC_act1='relu', FFT_FC_act2='none', KNA_W_bn_decay=0.1, KNA_W_drop=0.01, KNA_W_act1='relu', KNA_W_act2='none', KNA_Wq_bn_decay=0.1, KNA_Wq_drop=0.01, KNA_Wq_act='none', KNA_Wk_bn_decay=0.1, KNA_Wk_drop=0.01, KNA_Wk_act='none', KNA_Wv_bn_decay=0.1, KNA_Wv_drop=0.01, KNA_Wv_act='none', KNA_Fusion_bn_decay=0.1, KNA_Fusion_drop=0.01, KNA_Fusion_act='relu', SA_FCq_bn_decay=0.1, SA_FCq_drop=0.01, SA_FCq_act='relu', SA_FCk_bn_decay=0.1, SA_FCk_drop=0.01, SA_FCk_act='relu', SA_FCv_bn_decay=0.1, SA_FCv_drop=0.01, SA_FCv_act='relu', SA_FC_bn_decay=0.1, SA_FC_drop=0.01, SA_FC_act='relu', TA_Wq_bn_decay=0.1, TA_Wq_drop=0.01, TA_Wq_act='none', TA_Wk_bn_decay=0.1, TA_Wk_drop=0.01, TA_Wk_act='none', TA_Wv_bn_decay=0.1, TA_Wv_drop=0.01, TA_Wv_act='none', TA_Fusion_bn_decay=0.1, TA_Fusion_drop=0.01, TA_Fusion_act='relu', NAV_Wq_bn_decay=0.1, NAV_Wq_drop=0.01, NAV_Wq_act='none', NAV_Wk_bn_decay=0.1, NAV_Wk_drop=0.01, NAV_Wk_act='none', NAV_Wv_bn_decay=0.1, NAV_Wv_drop=0.01, NAV_Wv_act='none', NAV_Mapping_bn_decay=0.1, NAV_Mapping_drop=0.01, NAV_Mapping_act='relu', NAV_Fusion_bn_decay=0.1, NAV_Fusion_drop=0.01, NAV_Fusion_act='relu', STB_SpatialFusion_bn_decay=0.1, STB_SpatialFusion_drop=0.01, STB_SpatialFusion_act='relu', STB_TemporalFusion_bn_decay=0.1, STB_TemporalFusion_drop=0.01, STB_TemporalFusion_act='relu', STB_FinalFusion_bn_decay=0.1, STB_FinalFusion_drop=0.01, STB_FinalFusion_act='relu', STB_Gate_bn_decay=0.1, STB_Gate_drop=0.1, STB_Gate_act1='relu', STB_Gate_act2='sigmoid', TA_FCq_bn_decay=0.1, TA_FCq_drop=0.01, TA_FCq_act='relu', TA_FCk_bn_decay=0.1, TA_FCk_drop=0.01, TA_FCk_act='relu', TA_FCv_bn_decay=0.1, TA_FCv_drop=0.01, TA_FCv_act='relu', TA_FC_bn_decay=0.1, TA_FC_drop=0.01, TA_FC_act='relu', Traffic_Linear_bn_decay=0.1, Traffic_Linear_drop=0.01, Traffic_Linear_act1='relu', Traffic_Linear_act2='none', Query_Linear_bn_decay=0.1, Query_Linear_drop=0.01, Query_Linear_act1='relu', Query_Linear_act2='none', Output_bn_decay=0.1, Output_drop=0.01, Output_act1='relu', Output_act2='none', GDC_bn_decay=0.1, TSP_bn_decay=0.1
+Using device: cuda:0
+trainX: torch.Size([4084, 8, 134])		 trainY: torch.Size([4084, 8, 134])
+valX:   torch.Size([571, 8, 134])		valY:   torch.Size([571, 8, 134])
+testX:   torch.Size([1156, 8, 134])		testY:   torch.Size([1156, 8, 134])
+mean:   32.5168		std:   12.3633
+data loaded!
+compiling model...
+trainable parameters: 655,648
+**** training model ****
+2025-10-19 15:54:37 | epoch: 0001/100, training time: 64.9s, inference time: 2.1s
+train loss: 3.5826, val_loss: 3.4785
+val loss decrease from inf to 3.4785, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 15:55:40 | epoch: 0002/100, training time: 61.5s, inference time: 2.1s
+train loss: 3.2697, val_loss: 3.5033
+2025-10-19 15:56:41 | epoch: 0003/100, training time: 58.4s, inference time: 2.1s
+train loss: 3.1953, val_loss: 3.4176
+val loss decrease from 3.4785 to 3.4176, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 15:57:39 | epoch: 0004/100, training time: 56.5s, inference time: 2.1s
+train loss: 3.1590, val_loss: 3.3984
+val loss decrease from 3.4176 to 3.3984, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 15:58:47 | epoch: 0005/100, training time: 64.5s, inference time: 2.8s
+train loss: 3.1287, val_loss: 3.4478
+2025-10-19 15:59:58 | epoch: 0006/100, training time: 68.8s, inference time: 2.7s
+train loss: 3.0992, val_loss: 3.3525
+val loss decrease from 3.3984 to 3.3525, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 16:01:09 | epoch: 0007/100, training time: 68.3s, inference time: 2.3s
+train loss: 3.0731, val_loss: 3.4095
+2025-10-19 16:02:10 | epoch: 0008/100, training time: 59.3s, inference time: 2.2s
+train loss: 3.0593, val_loss: 3.3546
+2025-10-19 16:03:12 | epoch: 0009/100, training time: 59.9s, inference time: 2.2s
+train loss: 3.0452, val_loss: 3.3468
+val loss decrease from 3.3525 to 3.3468, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 16:04:15 | epoch: 0010/100, training time: 60.1s, inference time: 2.2s
+train loss: 3.0506, val_loss: 3.3954
+2025-10-19 16:05:19 | epoch: 0011/100, training time: 62.1s, inference time: 2.4s
+train loss: 3.0111, val_loss: 3.3481
+2025-10-19 16:06:29 | epoch: 0012/100, training time: 67.3s, inference time: 2.3s
+train loss: 3.0025, val_loss: 3.3389
+val loss decrease from 3.3468 to 3.3389, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 16:07:36 | epoch: 0013/100, training time: 65.2s, inference time: 2.3s
+train loss: 2.9750, val_loss: 3.4605
+2025-10-19 16:08:43 | epoch: 0014/100, training time: 64.1s, inference time: 2.3s
+train loss: 2.9656, val_loss: 3.2866
+val loss decrease from 3.3389 to 3.2866, saving model to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+2025-10-19 16:09:50 | epoch: 0015/100, training time: 65.0s, inference time: 2.3s
+train loss: 2.9734, val_loss: 3.3365
+2025-10-19 16:10:57 | epoch: 0016/100, training time: 64.8s, inference time: 2.3s
+train loss: 2.9612, val_loss: 3.3404
+2025-10-19 16:12:03 | epoch: 0017/100, training time: 64.0s, inference time: 2.2s
+train loss: 2.9511, val_loss: 3.3126
+2025-10-19 16:13:05 | epoch: 0018/100, training time: 59.7s, inference time: 2.2s
+train loss: 2.9264, val_loss: 3.3294
+2025-10-19 16:14:08 | epoch: 0019/100, training time: 60.1s, inference time: 2.2s
+train loss: 2.9294, val_loss: 3.4405
+2025-10-19 16:15:10 | epoch: 0020/100, training time: 59.8s, inference time: 2.2s
+train loss: 2.9163, val_loss: 3.4001
+2025-10-19 16:16:11 | epoch: 0021/100, training time: 59.5s, inference time: 2.1s
+train loss: 2.8953, val_loss: 3.3528
+2025-10-19 16:17:11 | epoch: 0022/100, training time: 58.3s, inference time: 2.1s
+train loss: 2.8803, val_loss: 3.3210
+early stop at epoch: 0022
+Training completed. Best model saved to ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+**** testing model ****
+loading model from ./save_model/grid_32_37/Model_GF_test_20251019_155314.pth
+model loaded!
+evaluating...
+train MAE: 2.5981, RMSE: 4.2251, MAPE: 8.95%
+performance in each prediction step (train)
+step 1: MAE=2.0360, RMSE=3.1715, MAPE=6.98%
+step 2: MAE=2.5432, RMSE=4.0990, MAPE=8.72%
+step 3: MAE=2.6363, RMSE=4.2903, MAPE=9.09%
+step 4: MAE=2.6622, RMSE=4.3565, MAPE=9.21%
+step 5: MAE=2.6833, RMSE=4.4057, MAPE=9.26%
+step 6: MAE=2.7041, RMSE=4.4375, MAPE=9.33%
+step 7: MAE=2.7342, RMSE=4.4831, MAPE=9.43%
+step 8: MAE=2.7853, RMSE=4.5571, MAPE=9.58%
+average: MAE=2.5981, RMSE=4.2251, MAPE=8.95%
+val MAE: 3.2884, RMSE: 5.3192, MAPE: 11.84%
+performance in each prediction step (val)
+step 1: MAE=2.4669, RMSE=3.8102, MAPE=8.62%
+step 2: MAE=3.1712, RMSE=5.0677, MAPE=11.27%
+step 3: MAE=3.3558, RMSE=5.4167, MAPE=12.06%
+step 4: MAE=3.3949, RMSE=5.5173, MAPE=12.26%
+step 5: MAE=3.4274, RMSE=5.5935, MAPE=12.38%
+step 6: MAE=3.4529, RMSE=5.6433, MAPE=12.51%
+step 7: MAE=3.4929, RMSE=5.7159, MAPE=12.71%
+step 8: MAE=3.5452, RMSE=5.7893, MAPE=12.89%
+average: MAE=3.2884, RMSE=5.3192, MAPE=11.84%
+test MAE: 2.7838, RMSE: 4.4537, MAPE: 9.48%
+performance in each prediction step (test)
+step 1: MAE=2.1367, RMSE=3.2843, MAPE=7.30%
+step 2: MAE=2.7051, RMSE=4.2843, MAPE=9.23%
+step 3: MAE=2.8219, RMSE=4.5047, MAPE=9.65%
+step 4: MAE=2.8558, RMSE=4.5841, MAPE=9.75%
+step 5: MAE=2.8817, RMSE=4.6441, MAPE=9.79%
+step 6: MAE=2.9180, RMSE=4.7103, MAPE=9.91%
+step 7: MAE=2.9533, RMSE=4.7733, MAPE=10.04%
+step 8: MAE=2.9983, RMSE=4.8442, MAPE=10.19%
+average: MAE=2.7838, RMSE=4.4537, MAPE=9.48%
+total testing time: 21.7s
+total time: 24.3min
